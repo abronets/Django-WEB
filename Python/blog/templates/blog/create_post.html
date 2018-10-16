@@ -1,0 +1,28 @@
+{% extends 'blog/index.html' %}
+{% load i18n %}
+
+{% block main %}
+    <form method="post">
+
+        <p id="two_input">
+            <label for="{{ form.title.id_for_label }}">
+                <h3>{% trans 'Заголовок:' %}</h3>
+            </label>
+            {{ form.title }}
+        <p class="btn">{{ form.title.errors }}</p>
+        </p>
+        <p id="first_input">
+            <label for="{{ form.text.id_for_label }}">
+                <h3>{% trans 'Текст:' %}</h3>
+            </label>
+            {{ form.text }}
+        <p class="btn">{{ form.text.errors }}</p>
+        </p>
+        <p id="three_input">
+            {{ form.user }}
+        <p сlass="btn">{{ form.user.errors }}</p>
+        </p>
+        {% csrf_token %}
+        <button class="btn btn-dark"><a style="color:white">{% trans 'ОК' %}</a></button>
+    </form>
+{% endblock %}

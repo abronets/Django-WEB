@@ -1,0 +1,22 @@
+version: '3'
+services:
+  db:
+    image: sqllite
+    environment:
+      - POSTGRES_PASSWORD=test37
+    command: manage.py
+
+  web:
+    build: .
+    volumes:
+      - .:/web
+    links:
+      - db:db
+    ports:
+      - "8000:8000"
+    environment:
+      - DJANGO_SETTINGS_MODULE=myDjango.settings.local
+      - PGPASSWORD=test37
+      - PY_AUTORELOAD=1
+      - PYTHONUNBUFFERED=1
+    command: /bin/bash -c "pip3 install -r requirements.txt && python3 manage.py migrate && python3 manage.py runserver 0.0.0.0:8000"

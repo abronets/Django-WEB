@@ -1,0 +1,22 @@
+{% load static posts %}
+
+	<header id="gtco-header" class="gtco-cover" role="banner" style="background-image: url({% static 'images/img_1.jpg' %})" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-7 text-left">
+					<div class="display-t">
+                        <div class="display-tc animate-box" data-animate-effect="fadeInUp">
+                            <span class="date-post">{{ random_post.published_date }}</span>
+                            <a href="/posts/detail/{{ id }}/">
+                                <h1 class="mb30">
+                                    {{ random_post.title }}
+                                </h1>
+                            </a>
+                                <p><a href="/posts/detail/{{ id }}/" class="text-link">Читай тут</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
