@@ -1,9 +1,0 @@
-{% load i18n %}
-
-{% block comments %}
-<form method="post" action="{{ comment_url }}">
-    {{ comment_form.as_p }}
-    {% csrf_token %}
-    <button  class="btn" style="color:black" type="submit">{% trans 'ВІДПРАВИТИ' %}</button>
-</form>
-{% endblock %}

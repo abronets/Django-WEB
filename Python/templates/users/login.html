@@ -1,0 +1,25 @@
+{% extends 'blog/index.html' %}
+
+{% block main %}
+    <form method="post">
+        {% csrf_token %}
+        <p>
+            <label id="{{ form.username.id_for_label }}" ><div class="text-center">Логин</div></label>
+            {{ form.username }}
+            <p style="color: black;">
+                {{ form.username.errors }}
+            </p>
+        </p>
+        <p>
+            <label id="{{ form.password.id_for_label }}"><div class="text-center">Пароль</div></label>
+            {{ form.password }}
+            <p style="color: black;">
+                {{ form.password.errors }}
+            </p>
+        </p>
+        {% for err in form.non_field_errors %}
+            <p style="color: black;">{{ err }}</p>
+        {% endfor %}
+        <button type="submit" class="btn btn-secondary">Войти</button>
+    </form>
+{% endblock %}

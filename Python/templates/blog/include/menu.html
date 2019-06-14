@@ -1,0 +1,24 @@
+{% load static %}
+    {% block menu %}
+        <nav class="gtco-nav" role="navigation">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-2 text-left">
+                        <div id="gtco-logo"><a href="{% url 'posts_list' %}">Це блог Андрія йоу<span>.</span></a></div>
+                    </div>
+                    <div class="col-xs-10 text-right menu-1">
+                        <ul>
+                        {% if user.is_authenticated %}
+                            <li><a href="{% url 'post_create' %}">Создати пост</a></li>
+                            <li><a href="{% url 'user_detail' user.id %}">Профіль</a></li>
+                            <li><a href="{% url 'logout' %}">Вийти</a></li>
+                        {% endif %}
+                        {% if user.is_anonymous %}
+                            <li><a href="{% url 'login' %}">Ввійти</a></li>
+                        {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+	    </nav>
+    {% endblock %}

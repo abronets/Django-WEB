@@ -1,0 +1,16 @@
+{% load i18n %}
+<li class="list-group-item">
+    <div class="post-preview">
+        <h5 class="post-subtitle">
+            <a  href="{% url 'user_detail' comment.user.id %}">{{ comment.user }}</a>
+        </h5>
+        <h4 class="post-subtitle">
+            {{ comment.text }}
+        </h4>
+        <p class="date-post">
+            {% blocktrans with user=post.user created_datetime=comment.created_datetime%}
+            Коментар від {{ user }} в {{ created_datetime }}
+            {% endblocktrans %}
+        </p>
+    </div>
+</li>
