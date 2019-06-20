@@ -33,21 +33,21 @@ class PostDetailView(DetailView):
 class PostCreateView(AddUserToFormMixin, CreateView):
     model = Post
     template_name = 'blog/create_post.html'
-    success_url = '/posts/list'
+    success_url = '/'
     form_class = CreatePostForm
 
 
 class PostUpdateView(AddUserToFormMixin, UpdateView):
     model = Post
     template_name = 'blog/create_post.html'
-    success_url = '/posts/list'
+    success_url = '/'
     form_class = CreatePostForm
 
 
 class PostDeleteView(LoginRequiredMixin, DeleteView):
     model = Post
     template_name = 'blog/delete_post.html'
-    success_url = '/posts/list'
+    success_url = '/'
     fields = '__all__'
 
 

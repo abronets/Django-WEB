@@ -26,13 +26,13 @@ router = DefaultRouter()
 
 urlpatterns = [
     url(r'admin/', admin.site.urls),
-    url(r'posts/', include('blog.urls')),
+    url(r'', include('blog.urls')),
     url(r'users/', include('users.urls')),
     url(r'docs/', schema_view),
     url(r'api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     # url(r'accounts/', include('allauth.urls')),
     ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-urlpatterns += router.urls
+# urlpatterns += router.urls
 
 

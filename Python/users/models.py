@@ -3,6 +3,8 @@ from django.contrib.auth.models import PermissionsMixin
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from .managers import UserManager
+
+
 # Create your models here.
 
 
@@ -20,10 +22,16 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     USERNAME_FIELD = 'email'
     EMAIL_FIELD = 'email'
-    REQUIRED_FIELDS =[]
+    REQUIRED_FIELDS = []
 
     def get_short_name(self):
         return self.first_name
+
+    def can_create_posts(self):
+        if self.is_staff:
+            return True
+        else:
+            return False
 
     @property
     def get_full_name(self):

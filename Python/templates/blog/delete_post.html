@@ -5,6 +5,6 @@
 <form method="post">
     {{ form.as_p }}
     {% csrf_token %}
-    <button type="submit" href={% url 'posts_list' %}>Да, удалить</button>
+    <button autofocus type="submit" href= "{% url 'posts_list' %}">Да, удалить</button>
 </form>
 {% endblock %}

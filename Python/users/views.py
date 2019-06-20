@@ -5,20 +5,23 @@ from django.contrib.auth.views import LoginView
 from django.views.generic import DetailView
 
 from .forms import LoginForm
+
+
 # Create your views here.
 
 
 class CustomLoginView(LoginView):
     template_name = 'users/login.html'
-    success_url = '/posts/list'
     form_class = LoginForm
+    success_url = '/'
 
 
 class UserDetailView(DetailView):
     template_name = 'users/user_detail.html'
     model = get_user_model()
 
+
 class UserRegister(SignupView):
     form_class = SignupForm
     redirect_field_name = "next"
-    success_url = '/posts/list/'
+    success_url = '/'

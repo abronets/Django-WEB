@@ -8,12 +8,12 @@
 					<div class="display-t">
                         <div class="display-tc animate-box" data-animate-effect="fadeInUp">
                             <span class="date-post">{{ random_post.published_date }}</span>
-                            <a href="/posts/detail/{{ id }}/">
+                            <a href="{% url 'post_detail' random_post.id %}">
                                 <h1 class="mb30">
                                     {{ random_post.title }}
                                 </h1>
                             </a>
-                                <p><a href="/posts/detail/{{ id }}/" class="text-link">Читай тут</a></p>
+                                <p><a href="{% url 'post_detail' random_post.id %}" class="text-link">Читай тут</a></p>
 						</div>
 					</div>
 				</div>
