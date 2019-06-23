@@ -143,7 +143,7 @@ STATICFILES_DIRS = ["static", ]
 MEDIA_ROOT = 'media'
 MEDIA_URL = 'media/'
 
-LOGIN_REDIRECT_URL = '/posts/list'
+LOGIN_REDIRECT_URL = '/'
 AUTH_USER_MODEL = 'users.User'
 
 SITE_ID = 1
