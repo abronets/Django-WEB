@@ -1,6 +1,8 @@
 *.pyc
 __pycache__
 myvenv
+venv
+env
 .DS_Store
 .idea
 db.sqlite3

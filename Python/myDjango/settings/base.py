@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'blog',
     'users',
     # Rest
-    'rest-framework',
     'rest-framework-swagger',
     #Allauth
     'allauth',
