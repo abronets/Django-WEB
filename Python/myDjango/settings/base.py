@@ -40,12 +40,11 @@ INSTALLED_APPS = [
     'blog',
     'users',
     # Rest
-    'rest-framework-swagger',
-    #Allauth
+    # Allauth
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    #3rd party modules
+    # 3rd party modules
     'captcha',
 
 ]
