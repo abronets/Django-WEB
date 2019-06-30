@@ -12,6 +12,7 @@ class CreatePostForm(forms.ModelForm):
     )
     title = forms.CharField(widget=forms.TextInput(
         attrs={
+            'autofocus': True,
             'placeholder': 'Введи текст',
             'class': 'form-control',
         }),
