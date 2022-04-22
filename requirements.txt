@@ -10,7 +10,7 @@ coreschema==0.0.4
 coverage==4.3.4
 decorator==4.3.0
 defusedxml==0.5.0
-Django==2.2.8
+Django==2.2.28
 django-allauth==0.36.0
 django-braces==1.13.0
 django-debug-toolbar==1.9.1
